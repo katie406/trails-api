@@ -10,6 +10,7 @@ import logo from './logo.svg';
 import './App.css';
 import TrailsList from './TrailsList';
 import TrailsDetails from './TrailsDetails';
+import TrailsUpdate from './TrailsUpdate';
 
 class App extends Component {
   
@@ -19,7 +20,8 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={TrailsList}/>
-          <Route path="/trails/:id" component={TrailsDetails}/>
+          <Route exact path="/trails/:id" component={TrailsDetails}/>
+          <Route exact path="/trails/edit/:id" component={TrailsUpdate}/>
         </Switch>
       </Router>
     )

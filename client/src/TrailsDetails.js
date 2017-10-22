@@ -44,6 +44,7 @@ class TrailsDetails extends Component {
             <li>{this.state.challenge}</li>
           </ul>
           <Link to="/"><button>Back</button></Link>
+          <Link to={"/trails/edit/" + this.props.match.params.id}><button>Edit</button></Link>
         </div>
         
                 
