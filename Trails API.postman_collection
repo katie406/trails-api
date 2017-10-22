@@ -1,0 +1,395 @@
+{
+	"info": {
+		"name": "Trails API",
+		"_postman_id": "ee05a53d-81d1-8ce8-e25c-61512b27e2ee",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get them all",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "name",
+						"value": "oops"
+					},
+					{
+						"key": "length_miles",
+						"value": "1"
+					},
+					{
+						"key": "difficulty",
+						"value": "easy"
+					},
+					{
+						"key": "description",
+						"value": "trying again"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "really good",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length_miles",
+							"value": "503",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "difficulty",
+							"value": "fun",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trails/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trails",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "name",
+						"value": "oops"
+					},
+					{
+						"key": "length_miles",
+						"value": "1"
+					},
+					{
+						"key": "difficulty",
+						"value": "easy"
+					},
+					{
+						"key": "description",
+						"value": "trying again"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Trail 1",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length_miles",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "difficulty",
+							"value": "easy",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Trail description 1",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trails/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trails",
+						""
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "name",
+						"value": "oops"
+					},
+					{
+						"key": "length_miles",
+						"value": "1"
+					},
+					{
+						"key": "difficulty",
+						"value": "easy"
+					},
+					{
+						"key": "description",
+						"value": "trying again"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "other",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length_miles",
+							"value": "4.5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "difficulty",
+							"value": "fun",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trails/59dfff9bef43c7071e4893f8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trails",
+						"59dfff9bef43c7071e4893f8"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "name",
+						"value": "oops"
+					},
+					{
+						"key": "length_miles",
+						"value": "1"
+					},
+					{
+						"key": "difficulty",
+						"value": "easy"
+					},
+					{
+						"key": "description",
+						"value": "trying again"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "baller",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length_miles",
+							"value": "4.5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "difficulty",
+							"value": "fun",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trails/59e013094596d80b3dd01eb5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trails",
+						"59e013094596d80b3dd01eb5"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get by ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "name",
+						"value": "oops"
+					},
+					{
+						"key": "length_miles",
+						"value": "1"
+					},
+					{
+						"key": "difficulty",
+						"value": "easy"
+					},
+					{
+						"key": "description",
+						"value": "trying again"
+					},
+					{
+						"key": "_id",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "baller",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "length_miles",
+							"value": "4.5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "difficulty",
+							"value": "fun",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "yes",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trails/59da723ab3a39af2956875a9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trails",
+						"59da723ab3a39af2956875a9"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

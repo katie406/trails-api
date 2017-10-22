@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "coltrails": {
+    "host": "",
+    "port": 0,
+    "url": "mongodb://admin:admin@ds113785.mlab.com:13785/mcs-code",
+    "database": "",
+    "password": "",
+    "name": "coltrails",
+    "user": "",
+    "connector": "mongodb"
+  }
+}
