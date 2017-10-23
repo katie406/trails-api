@@ -8,6 +8,7 @@ import {
 import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
+import Login from './Login';
 import TrailsList from './TrailsList';
 import TrailsDetails from './TrailsDetails';
 import TrailsUpdate from './TrailsUpdate';
@@ -19,6 +20,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route exact path="/login" component={Login}/>
           <Route exact path="/" component={TrailsList}/>
           <Route exact path="/trails/:id" component={TrailsDetails}/>
           <Route exact path="/trails/edit/:id" component={TrailsUpdate}/>

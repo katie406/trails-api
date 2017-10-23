@@ -36,7 +36,7 @@
     "public": false
   },
   "trails": {
-    "dataSource": "coltrails",
+    "dataSource": "db",
     "public": true
   }
 }
