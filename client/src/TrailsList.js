@@ -19,7 +19,6 @@ class TrailsList extends Component {
     this.handleChange = this.handleChange.bind(this);
     }
   componentWillMount() {
-    console.log(this.props.trails);
     // axios.get('/api/trails')
     //   .then((response) => {
     //     this.setState({
@@ -41,7 +40,6 @@ class TrailsList extends Component {
   }
 
   handleChange(event) {
-    console.log(event.target);
     this.setState({[event.target.name]: event.target.value});
   }
 
@@ -54,13 +52,14 @@ class TrailsList extends Component {
       description: this.state.description,
       challenge: this.state.challenge
     }
-    
-    axios.post('/api/trails/', newTrail) 
-        .then((res) => {
-          var newTrails = this.state.trails;
-          newTrails.push(res.data);
-          this.setState({trails: newTrails})
-    }); 
+
+    this.props.action(newTrail);
+    // axios.post('/api/trails/', newTrail) 
+    //     .then((res) => {
+    //       var newTrails = this.state.trails;
+    //       newTrails.push(res.data);
+    //       this.setState({trails: newTrails})
+    // }); 
   }
 
   render() {
