@@ -30,13 +30,15 @@ class TrailsList extends Component {
     //   });
   }
 
-  delete(trail){
-    const newState = this.state.trails;
-       newState.splice(newState.indexOf(trail), 1);
-      axios.delete('/api/trails/' + trail)
-        .then((res) => {
-          this.setState({trails: newState})
-    }); 
+  delete(trailId){
+    // const deleteTrail = this.props.trails;
+    //   newState.splice(newState.indexOf(trail), 1);
+    //   axios.delete('/api/trails/' + trail)
+    //     .then((res) => {
+    //       this.setState({trails: newState})
+    // }); 
+    
+    this.props.deleteTrail(trailId);
   }
 
   handleChange(event) {
@@ -53,7 +55,7 @@ class TrailsList extends Component {
       challenge: this.state.challenge
     }
 
-    this.props.action(newTrail);
+    this.props.addTrail(newTrail);
     // axios.post('/api/trails/', newTrail) 
     //     .then((res) => {
     //       var newTrails = this.state.trails;

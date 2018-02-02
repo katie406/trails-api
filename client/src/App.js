@@ -28,7 +28,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/login" component ={Login}/>
-          <Route exact path="/" render={() => <TrailsList trails={ this.props.trail } action={ this.props.actions.addTrail }/>} />
+          <Route exact path="/" render={() => <TrailsList trails={ this.props.trail } addTrail={ this.props.actions.addTrail } deleteTrail={ this.props.actions.deleteTrail }/>} />
           <Route exact path="/trails/:id" component={TrailsDetails}/>
           <Route exact path="/trails/edit/:id" component={TrailsUpdate}/>
         </Switch>

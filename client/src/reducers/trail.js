@@ -1,5 +1,6 @@
 import {
-  ADD_TRAIL
+  ADD_TRAIL,
+  DELETE_TRAIL
 } from '../actions/trail'
 
 const initialState = [
@@ -20,6 +21,7 @@ export default function trail(state = initialState, action) {
       return [
         ...state,
         {
+          id: action.trail.id,
           name: action.trail.name,
           length: action.trail.brewery,
           elevation: action.trail.elevation,
@@ -27,6 +29,11 @@ export default function trail(state = initialState, action) {
           challenge: action.trail.challenge
         }
       ]
+    case DELETE_TRAIL:
+    console.log(action.trailId);
+      return state.filter(trail => 
+        trail.id !== action.trailId
+      )
     default:
       return state
   }
