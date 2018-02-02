@@ -12,6 +12,11 @@ import Login from './Login';
 import TrailsList from './TrailsList';
 import TrailsDetails from './TrailsDetails';
 import TrailsUpdate from './TrailsUpdate';
+import * as trailActions from './actions/trail';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+
+
 
 class App extends Component {
   
@@ -20,8 +25,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/login" component={Login}/>
-          <Route exact path="/" component={TrailsList}/>
+          <Route exact path="/login" component ={Login}/>
+          <Route exact path="/" render={() => <TrailsList trails={ this.props.trail } action={ this.props.actions.addTrail }/>} />
           <Route exact path="/trails/:id" component={TrailsDetails}/>
           <Route exact path="/trails/edit/:id" component={TrailsUpdate}/>
         </Switch>
@@ -29,4 +34,16 @@ class App extends Component {
     )
   };
 };
-export default App;
+
+const mapStateToProps = state => ({
+  trail: state.trail
+})
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(trailActions, dispatch)
+})
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App)

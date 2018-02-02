@@ -19,15 +19,16 @@ class TrailsList extends Component {
     this.handleChange = this.handleChange.bind(this);
     }
   componentWillMount() {
-    axios.get('/api/trails')
-      .then((response) => {
-        this.setState({
-          trails: response.data
-        })
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    console.log(this.props.trails);
+    // axios.get('/api/trails')
+    //   .then((response) => {
+    //     this.setState({
+    //       trails: response.data
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 
   delete(trail){
@@ -63,7 +64,7 @@ class TrailsList extends Component {
   }
 
   render() {
-    const trailItems = this.state.trails.map((trail)=>{
+    const trailItems = this.props.trails.map((trail)=>{
       return <li key={trail.id}>
         <Link to={"/trails/" + trail.id}>{trail.name}</Link>&nbsp;
         <button onClick={this.delete.bind(this, trail.id)}>Delete</button>
