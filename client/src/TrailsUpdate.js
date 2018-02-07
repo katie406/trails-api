@@ -19,44 +19,29 @@ class TrailsUpdate extends Component {
     this.handleChange = this.handleChange.bind(this);
     }
   componentWillMount() {
-    axios.get('/api/trails/' + this.props.match.params.id)
-    .then((response) => {
-      this.setState({
-        name: response.data.name, 
-        length: response.data.length, 
-        elevation: response.data.elevation, 
-        description: response.data.description, 
-        challenge: response.data.challenge 
-      })
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    let thisTrail = this.props.trails.find(trail => {
+      return trail.id === parseInt(this.props.match.params.id)})
+    this.setState(
+      thisTrail
+    )
   }
 
   handleChange(event) {
-    console.log(event.target);
     this.setState({[event.target.name]: event.target.value});
   }
 
   handleSubmit(event){
     event.preventDefault();
     const newTrail = {
+      id: this.state.id,
       name: this.state.name,
       length: this.state.length, 
       elevation: this.state.elevation,
       description: this.state.description,
       challenge: this.state.challenge
     }
-    
-    axios.put('/api/trails/' + this.props.match.params.id, newTrail) 
-        .then((res) => {
-          var newTrails = this.state.trails;
-          newTrails.push(res.data);
-          this.setState({trails: newTrails})
-          this.props.history.push('/')  
-    }); 
-
+    this.props.updateTrail(parseInt(this.props.match.params.id), newTrail)
+    this.props.history.push("/")
   }
 
   render() {

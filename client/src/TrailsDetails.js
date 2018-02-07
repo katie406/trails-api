@@ -17,19 +17,24 @@ class TrailsDetails extends Component {
   }
 
   componentWillMount() {
-    axios.get('/api/trails/' + this.props.match.params.id)
-      .then((response) => {
-        this.setState({
-          name: response.data.name, 
-          length: response.data.length, 
-          elevation: response.data.elevation, 
-          description: response.data.description, 
-          challenge: response.data.challenge 
-        })
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    let thisTrail = this.props.trails.find(trail => {
+      return trail.id === parseInt(this.props.match.params.id)})
+    this.setState(
+      thisTrail
+    )
+    // axios.get('/api/trails/' + this.props.match.params.id)
+    //   .then((response) => {
+    //     this.setState({
+    //       name: response.data.name, 
+    //       length: response.data.length, 
+    //       elevation: response.data.elevation, 
+    //       description: response.data.description, 
+    //       challenge: response.data.challenge 
+    //     })
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   }
 
   render() {

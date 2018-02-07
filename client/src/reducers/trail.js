@@ -1,6 +1,7 @@
 import {
   ADD_TRAIL,
-  DELETE_TRAIL
+  DELETE_TRAIL,
+  UPDATE_TRAIL
 } from '../actions/trail'
 
 const initialState = [
@@ -12,6 +13,14 @@ const initialState = [
     description: 'steep at parts',
     challenge: "moderate"
 
+  },
+  {
+    id: 1,
+    name: 'The M',
+		length: '3 miles',
+    elevation: 800,
+    description: 'steep at parts',
+    challenge: "moderate"
   }
 ]
 
@@ -30,10 +39,13 @@ export default function trail(state = initialState, action) {
         }
       ]
     case DELETE_TRAIL:
-    console.log(action.trailId);
       return state.filter(trail => 
         trail.id !== action.trailId
       )
+    case UPDATE_TRAIL:
+      return state.map(trail =>
+        trail.id === action.trailId ? action.trail : trail
+    )
     default:
       return state
   }

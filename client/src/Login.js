@@ -15,7 +15,6 @@ class Login extends Component {
   }
 
   handleChange(event) {
-    console.log(event.target.value);
     this.setState({[event.target.name]: event.target.value});
   }
 
@@ -28,7 +27,6 @@ class Login extends Component {
     
     axios.post('/api/Users/login', userLogin) 
         .then((res) => {
-          console.log(res);
           this.setAccessToken(res.data.id);
         })
         .catch((error) => {
