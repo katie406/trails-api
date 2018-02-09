@@ -35,6 +35,7 @@ class TrailsList extends Component {
   }
 
   delete(trailId){
+
     // const deleteTrail = this.props.trails;
     //   newState.splice(newState.indexOf(trail), 1);
     //   axios.delete('/api/trails/' + trail)
