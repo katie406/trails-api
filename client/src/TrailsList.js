@@ -7,18 +7,22 @@ import './App.css';
 class TrailsList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      trails: [],
-        name: "",
-        length: "",
-        elevation: "",
-        description: "",
-        challenge: ""
+    // this.state = {
+    //   trails: [
+    //     {
+    //     name: "",
+    //     length: "",
+    //     elevation: "",
+    //     description: "",
+    //     challenge: ""
+    //     }
+    //   ] 
       
-    };
+    // };
     this.handleChange = this.handleChange.bind(this);
     }
   componentWillMount() {
+    this.props.fetchTrails()
     // axios.get('/api/trails')
     //   .then((response) => {
     //     this.setState({
@@ -65,6 +69,8 @@ class TrailsList extends Component {
   }
 
   render() {
+    console.log(this.props.trails)
+
     const trailItems = this.props.trails.map((trail)=>{
       return <li key={trail.id}>
         <Link to={"/trails/" + trail.id}>{trail.name}</Link>&nbsp;

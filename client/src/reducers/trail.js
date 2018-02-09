@@ -1,31 +1,21 @@
 import {
   ADD_TRAIL,
   DELETE_TRAIL,
-  UPDATE_TRAIL
+  UPDATE_TRAIL,
+  FETCH_TRAILS_FULFILLED
 } from '../actions/trail'
 
-const initialState = [
-  {
-		id: 0,
-    name: 'Lava Lake',
-		length: '4 miles',
-    elevation: 4200,
-    description: 'steep at parts',
-    challenge: "moderate"
-
-  },
-  {
-    id: 1,
-    name: 'The M',
-		length: '3 miles',
-    elevation: 800,
-    description: 'steep at parts',
-    challenge: "moderate"
-  }
-]
+const initialState = {
+  trails: []
+}
 
 export default function trail(state = initialState, action) {
   switch (action.type) {
+    case FETCH_TRAILS_FULFILLED:
+      return {
+        ...state,
+        trails: action.payload.data
+      }
     case ADD_TRAIL:
       return [
         ...state,

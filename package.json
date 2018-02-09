@@ -21,6 +21,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.0.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^2.0.0"
   },

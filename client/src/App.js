@@ -27,7 +27,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/login" component ={Login}/>
-          <Route exact path="/" render={() => <TrailsList trails={ this.props.trail } addTrail={ this.props.actions.addTrail } deleteTrail={ this.props.actions.deleteTrail }/>} />
+          <Route exact path="/" render={() => <TrailsList trails={ this.props.trails } fetchTrails={ this.props.actions.fetchTrails } addTrail={ this.props.actions.addTrail } deleteTrail={ this.props.actions.deleteTrail }/>} />
           <Route exact path="/trails/:id" render={({match, history}) => <TrailsDetails match={ match } history={ history } trails={ this.props.trail }/>} />
           <Route exact path="/trails/edit/:id" render={({match, history}) => <TrailsUpdate match={ match } history={ history } trails={ this.props.trail } updateTrail={ this.props.actions.updateTrail } />} />
         </Switch>
@@ -37,7 +37,7 @@ class App extends Component {
 };
 
 const mapStateToProps = state => ({
-  trail: state.trail
+  trails: state.trail.trails
 })
 
 const mapDispatchToProps = dispatch => ({

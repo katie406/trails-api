@@ -5,6 +5,15 @@ let nextTrailId = 0;
 export const ADD_TRAIL = 'ADD_TRAIL';
 export const DELETE_TRAIL = 'DELETE_TRAIL';
 export const UPDATE_TRAIL = 'UPDATE_TRAIL';
+export const FETCH_TRAILS = 'FETCH_TRAILS';
+export const FETCH_TRAILS_FULFILLED = 'FETCH_TRAILS_FULFILLED';
+
+export function fetchTrails() {
+  return {
+    type: FETCH_TRAILS,
+    payload: axios.get('api/trails')
+  }
+}
 
 export function addTrail(trail) {
   return {
