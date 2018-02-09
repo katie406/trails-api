@@ -7,6 +7,7 @@ export const DELETE_TRAIL = 'DELETE_TRAIL';
 export const UPDATE_TRAIL = 'UPDATE_TRAIL';
 export const FETCH_TRAILS = 'FETCH_TRAILS';
 export const FETCH_TRAILS_FULFILLED = 'FETCH_TRAILS_FULFILLED';
+export const ADD_TRAIL_FULFILLED = 'ADD_TRAIL_FULFILLED';
 
 export function fetchTrails() {
   return {
@@ -18,7 +19,7 @@ export function fetchTrails() {
 export function addTrail(trail) {
   return {
     type: ADD_TRAIL,
-    trail: Object.assign({}, trail, {id: ++nextTrailId})
+    payload: axios.post('api/trails', trail)
   }
 }
 

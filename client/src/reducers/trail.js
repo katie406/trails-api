@@ -2,7 +2,8 @@ import {
   ADD_TRAIL,
   DELETE_TRAIL,
   UPDATE_TRAIL,
-  FETCH_TRAILS_FULFILLED
+  FETCH_TRAILS_FULFILLED,
+  ADD_TRAIL_FULFILLED
 } from '../actions/trail'
 
 const initialState = {
@@ -16,18 +17,11 @@ export default function trail(state = initialState, action) {
         ...state,
         trails: action.payload.data
       }
-    case ADD_TRAIL:
-      return [
+    case ADD_TRAIL_FULFILLED:
+      return {
         ...state,
-        {
-          id: action.trail.id,
-          name: action.trail.name,
-          length: action.trail.brewery,
-          elevation: action.trail.elevation,
-          description: action.trail.description,
-          challenge: action.trail.challenge
-        }
-      ]
+        trails: [...state.trails, action.payload.data]
+      }
     case DELETE_TRAIL:
       return state.filter(trail => 
         trail.id !== action.trailId
