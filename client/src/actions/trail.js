@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let nextTrailId = 0;
 
 export const ADD_TRAIL = 'ADD_TRAIL';
